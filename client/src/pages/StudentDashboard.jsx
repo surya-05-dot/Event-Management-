@@ -17,7 +17,7 @@ const StudentDashboard = () => {
             Authorization: `Bearer ${userInfo.token}`,
           },
         };
-        const { data } = await axios.get('http://localhost:5000/api/registrations/my', config);
+        const { data } = await axios.get('/api/registrations/my', config);
         setRegistrations(data);
         setLoading(false);
       } catch (err) {

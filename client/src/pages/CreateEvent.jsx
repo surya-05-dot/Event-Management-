@@ -31,7 +31,7 @@ const CreateEvent = () => {
         },
       };
 
-      await axios.post('http://localhost:5000/api/events', formData, config);
+      await axios.post('/api/events', formData, config);
       setLoading(false);
       navigate('/admin/dashboard');
     } catch (err) {

@@ -15,7 +15,7 @@ const Signup = () => {
     setLoading(true);
     try {
       const config = { headers: { 'Content-Type': 'application/json' } };
-      const { data } = await axios.post('http://localhost:5000/api/auth/signup', { name, email, password }, config);
+      const { data } = await axios.post('/api/auth/signup', { name, email, password }, config);
       localStorage.setItem('userInfo', JSON.stringify(data));
       setLoading(false);
       navigate('/');

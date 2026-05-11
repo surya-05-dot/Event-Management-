@@ -21,7 +21,7 @@ const AdminDashboard = () => {
         const config = {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         };
-        const { data } = await axios.get('http://localhost:5000/api/events', config);
+        const { data } = await axios.get('/api/events', config);
         setEvents(data);
         setLoading(false);
       } catch (err) {
@@ -39,7 +39,7 @@ const AdminDashboard = () => {
         const config = {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         };
-        await axios.delete(`http://localhost:5000/api/events/${id}`, config);
+        await axios.delete(`/api/events/${id}`, config);
         setEvents(events.filter(e => e._id !== id));
       } catch (err) {
         alert(err.response?.data?.message || err.message);

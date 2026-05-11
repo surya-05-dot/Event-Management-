@@ -16,7 +16,7 @@ const EventDetails = () => {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/events/${id}`);
+        const { data } = await axios.get(`/api/events/${id}`);
         setEvent(data);
         setLoading(false);
       } catch (err) {
@@ -43,7 +43,7 @@ const EventDetails = () => {
       };
 
       await axios.post(
-        'http://localhost:5000/api/registrations',
+        '/api/registrations',
         { eventId: id },
         config
       );
